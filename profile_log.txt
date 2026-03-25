@@ -1,0 +1,84 @@
+/usr/local/lib/python3.12/dist-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/usr/local/lib/python3.12/dist-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=None`.
+  warnings.warn(msg)
+----------------- Options ---------------
+             aspect_ratio: 1.0                           
+               batch_size: 2                             
+          checkpoints_dir: ./checkpoints                 
+                crop_size: 256                           
+                 dataroot: ./datasets/maps               
+             dataset_mode: unaligned                     
+                direction: AtoB                          
+          display_winsize: 256                           
+                    epoch: latest                        
+                     eval: False                         
+                  gpu_ids: 0                             	[default: 4]
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: False                         	[default: None]
+                load_iter: 0                             	[default: 0]
+                load_size: 256                           
+         max_dataset_size: inf                           
+                    model: cycle_gan                     	[default: test]
+               n_layers_D: 3                             
+                     name: maps_cyclegan                 
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: resnet_9blocks                
+                      ngf: 64                            
+               no_dropout: True                          
+                  no_flip: False                         
+                     norm: instance                      
+                 num_test: 1000                          
+              num_threads: 8                             
+                output_nc: 3                             
+                    phase: test                          
+               preprocess: resize_and_crop               
+              results_dir: ./results/                    
+           serial_batches: False                         
+                   suffix:                               
+                use_wandb: False                         
+                  verbose: False                         
+       wandb_project_name: CycleGAN-and-pix2pix          
+----------------- End -------------------
+dataset [UnalignedDataset] was created
+initialize network with normal
+initialize network with normal
+initialize network with normal
+  0%|                                               | 0.00/244M [00:00<?, ?iB/s]  3%|█▎                                    | 8.41M/244M [00:00<00:02, 88.1MiB/s]  7%|██▊                                   | 18.3M/244M [00:00<00:02, 97.2MiB/s] 12%|████▊                                  | 29.8M/244M [00:00<00:02, 108MiB/s] 16%|██████▏                               | 40.1M/244M [00:00<00:02, 71.9MiB/s] 20%|███████▌                              | 48.8M/244M [00:00<00:02, 77.3MiB/s] 24%|█████████                             | 58.2M/244M [00:00<00:02, 82.7MiB/s] 29%|██████████▊                           | 69.8M/244M [00:00<00:01, 93.6MiB/s] 33%|████████████▎                         | 79.3M/244M [00:00<00:01, 95.3MiB/s] 36%|█████████████▊                        | 88.8M/244M [00:01<00:01, 88.7MiB/s] 41%|███████████████▍                      | 99.4M/244M [00:01<00:01, 94.9MiB/s] 45%|█████████████████▌                     | 110M/244M [00:01<00:01, 99.4MiB/s] 49%|███████████████████▋                    | 120M/244M [00:01<00:01, 101MiB/s] 53%|████████████████████▋                  | 130M/244M [00:01<00:01, 96.3MiB/s] 58%|███████████████████████                 | 141M/244M [00:01<00:01, 101MiB/s] 62%|████████████████████████▋               | 150M/244M [00:01<00:00, 102MiB/s] 66%|█████████████████████████▌             | 160M/244M [00:01<00:00, 96.5MiB/s] 69%|███████████████████████████            | 170M/244M [00:01<00:00, 78.4MiB/s] 73%|████████████████████████████▍          | 178M/244M [00:02<00:00, 78.5MiB/s] 76%|█████████████████████████████▋         | 185M/244M [00:02<00:00, 77.7MiB/s] 79%|██████████████████████████████▉        | 193M/244M [00:02<00:00, 78.9MiB/s] 82%|████████████████████████████████▏      | 201M/244M [00:02<00:00, 79.3MiB/s] 86%|█████████████████████████████████▌     | 210M/244M [00:02<00:00, 83.4MiB/s] 89%|██████████████████████████████████▉    | 218M/244M [00:02<00:00, 75.8MiB/s] 93%|████████████████████████████████████   | 226M/244M [00:02<00:00, 71.6MiB/s] 97%|█████████████████████████████████████▊ | 237M/244M [00:02<00:00, 83.8MiB/s]100%|███████████████████████████████████████| 244M/244M [00:02<00:00, 87.7MiB/s]
+/usr/local/lib/python3.12/dist-packages/torch/functional.py:505: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at /pytorch/aten/src/ATen/native/TensorShape.cpp:4381.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+model [CycleGANModel] was created
+loading the model from ./checkpoints/maps_cyclegan/latest_net_LOW.pth
+loading the model from ./checkpoints/maps_cyclegan/latest_net_HIGH2.pth
+loading the model from ./checkpoints/maps_cyclegan/latest_net_HIGH3.pth
+---------- Networks initialized -------------
+[Network LOW] Total number of parameters : 0.133 M
+[Network HIGH2] Total number of parameters : 0.798 M
+[Network HIGH3] Total number of parameters : 1.083 M
+-----------------------------------------------
+creating web directory ./results/maps_cyclegan/test_latest
+
+[Profile] Image 0 (./datasets/maps/testA/d_r_182_.jpg): Inference Time: 5.1244s | Peak VRAM: 8742.31 MB
+processing (0000)-th image... ['./datasets/maps/testA/d_r_182_.jpg']
+
+[Profile] Image 1 (./datasets/maps/testA/d_r_196_.jpg): Inference Time: 0.0308s | Peak VRAM: 584.18 MB
+
+[Profile] Image 2 (./datasets/maps/testA/f_r_1165_.jpg): Inference Time: 0.0248s | Peak VRAM: 584.18 MB
+
+[Profile] Image 3 (./datasets/maps/testA/f_r_1992_.jpg): Inference Time: 0.0246s | Peak VRAM: 584.18 MB
+
+[Profile] Image 4 (./datasets/maps/testA/f_r_446_.jpg): Inference Time: 0.0251s | Peak VRAM: 584.18 MB
+
+[Profile] Image 5 (./datasets/maps/testA/f_r_644_.jpg): Inference Time: 0.0249s | Peak VRAM: 584.18 MB
+processing (0005)-th image... ['./datasets/maps/testA/f_r_644_.jpg']
+
+[Profile] Image 6 (./datasets/maps/testA/n_l_0_.jpg): Inference Time: 0.0249s | Peak VRAM: 584.18 MB
+
+[Profile] Image 7 (./datasets/maps/testA/n_l_29_.jpg): Inference Time: 0.0259s | Peak VRAM: 584.18 MB
+
+[Profile] Image 8 (./datasets/maps/testA/n_l_84_.jpg): Inference Time: 0.0253s | Peak VRAM: 584.18 MB
+
+[Profile] Image 9 (./datasets/maps/testA/w_r_150_.jpg): Inference Time: 0.0245s | Peak VRAM: 584.18 MB

@@ -1,0 +1,13 @@
+__pycache__/
+.ipynb_checkpoints/
+checkpoints/
+datasets/
+results/
+logs/
+.visdom/
+*.pth
+*.pt
+*.zip
+*.tar.gz
+.vscode/
+.env
